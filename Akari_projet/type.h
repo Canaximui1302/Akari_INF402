@@ -1,6 +1,6 @@
-#ifndef _TYPE_H_
-#define _TYPE_H_
-#define TAILLE 5
+#ifndef TYPE_H
+#define TYPE_H
+#define TAILLE 10
 
 
 //type de cellule:
@@ -21,14 +21,15 @@
 
 typedef enum 
 {
-    A, 
-    B,
-    N,
-    N0,
-    N1,
-    N2,
-    N3,
-    N4
+    V=0,
+    N0=1,
+    N1=2,
+    N2=3,
+    N3=4,
+    N4=5,
+    N=6,
+    B=7,
+    A=8 
 } Cell;
 
 
@@ -39,9 +40,13 @@ typedef struct tableau_
     Cell tab[TAILLE][TAILLE];
 } Tableau;
 
-Tableau init_jeu(int taille);
+Tableau tableau_vide(int taille);
 
+void affichage_tableau(Tableau t);
 
+void set_valeur(Tableau *t, int ln, int cl, Cell c);
+
+Cell get_valeur(Tableau t, int ln, int cl);
 
 
 #endif
