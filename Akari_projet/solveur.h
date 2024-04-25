@@ -5,5 +5,16 @@
 
 int check_ampoule(Tableau t, int x, int y);
 
+int check_0(Tableau t, int x, int y);
+
+int check_1(Tableau t, int x, int y);
+
+int check_2(Tableau t, int x, int y);
+
+int check_3(Tableau t, int x, int y);
+
+int check_4(Tableau t, int x, int y);
+
+
 
 #endif

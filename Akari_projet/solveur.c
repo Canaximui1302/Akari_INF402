@@ -23,3 +23,65 @@ int check_ampoule(Tableau t, int x, int y)
 
     return 1;
 }
+
+int check_0(Tableau t, int x, int y)
+{
+    if (t.tab[y][x+1] != A && t.tab[y][x-1] != A && t.tab[y+1][x] != A && t.tab[y-1][x] != A)
+        return 1;
+   
+    return 0;
+}
+
+int check_1(Tableau t, int x, int y)
+{
+    if (t.tab[y][x+1] == A && t.tab[y][x-1] != A && t.tab[y+1][x] != A && t.tab[y-1][x] != A)
+        return 1;
+    else if (t.tab[y][x+1] != A && t.tab[y][x-1] == A && t.tab[y+1][x] != A && t.tab[y-1][x] != A)
+        return 1;
+    else if (t.tab[y][x+1] != A && t.tab[y][x-1] != A && t.tab[y+1][x] == A && t.tab[y-1][x] != A)
+        return 1;
+    else if (t.tab[y][x+1] != A && t.tab[y][x-1] != A && t.tab[y+1][x] != A && t.tab[y-1][x] == A)
+        return 1;
+    
+    return 0;
+}
+
+int check_2(Tableau t, int x, int y)
+{
+    if (t.tab[y][x+1] == A && t.tab[y][x-1] == A && t.tab[y+1][x] != A && t.tab[y-1][x] != A)
+        return 1;
+    else if (t.tab[y][x+1] == A && t.tab[y][x-1] != A && t.tab[y+1][x] == A && t.tab[y-1][x] != A)
+        return 1;
+    else if (t.tab[y][x+1] == A && t.tab[y][x-1] != A && t.tab[y+1][x] != A && t.tab[y-1][x] == A)
+        return 1;
+    else if (t.tab[y][x+1] != A && t.tab[y][x-1] == A && t.tab[y+1][x] == A && t.tab[y-1][x] != A)
+        return 1;
+    else if (t.tab[y][x+1] != A && t.tab[y][x-1] == A && t.tab[y+1][x] != A && t.tab[y-1][x] == A)
+        return 1;
+    else if (t.tab[y][x+1] != A && t.tab[y][x-1] != A && t.tab[y+1][x] == A && t.tab[y-1][x] == A)
+        return 1;
+
+    return 0;
+
+}
+
+int check_3(Tableau t, int x, int y)
+{
+    if (t.tab[y][x+1] != A && t.tab[y][x-1] == A && t.tab[y+1][x] == A && t.tab[y-1][x] == A)
+        return 1;
+    else if (t.tab[y][x+1] == A && t.tab[y][x-1] != A && t.tab[y+1][x] == A && t.tab[y-1][x] == A)
+        return 1;
+    else if (t.tab[y][x+1] == A && t.tab[y][x-1] == A && t.tab[y+1][x] != A && t.tab[y-1][x] == A)
+        return 1;
+    else if (t.tab[y][x+1] == A && t.tab[y][x-1] == A && t.tab[y+1][x] == A && t.tab[y-1][x] != A)
+        return 1;
+
+    return 0;
+}
+
+int check_4(Tableau t, int x, int y)
+{
+    if (t.tab[y][x+1] == A && t.tab[y][x-1] == A && t.tab[y+1][x] == A && t.tab[y-1][x] == A)
+        return 1;
+    return 0;
+}
