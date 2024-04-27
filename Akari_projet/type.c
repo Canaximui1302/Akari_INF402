@@ -5,7 +5,7 @@
 
 Tableau tableau_vide(int taille)
 {
-    if(taille > TAILLE)
+    if(taille > TAILLE_MAX)
     {
         printf("Taille trop grande.\n");
         return tableau_vide(0);
@@ -16,7 +16,7 @@ Tableau tableau_vide(int taille)
     {
         for(int j = 0; j < taille; j++)
         {
-            t.tab[i][j] = V;
+            t.tab[i][j] = B;
         }
     }
     return t;
@@ -55,13 +55,13 @@ void affichage_tableau(Tableau t)
     }
 }
 
-void set_valeur(Tableau *t, int ln, int cl, Cell c)
+void set_valeur(Tableau *t, int cl, int ln, Cell c)
 {
     Cell c_precedente = t->tab[ln][cl];
     if(c == c_precedente) return;
     switch(c_precedente)
     {
-        case V:
+        case B:
             t->tab[ln][cl] = c;
             break;
         default:
@@ -69,7 +69,7 @@ void set_valeur(Tableau *t, int ln, int cl, Cell c)
     }
 }
 
-Cell get_valeur(Tableau t, int ln, int cl)
+Cell get_valeur(Tableau t, int cl, int ln)
 {
     if(ln < 0 || ln >= t.taille || cl < 0 || cl >= t.taille) return N;
     return t.tab[ln][cl];

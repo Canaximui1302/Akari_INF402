@@ -1,6 +1,7 @@
 #ifndef TYPE_H
 #define TYPE_H
-#define TAILLE 10
+#define TAILLE_MAX 10
+#define TAILLE_CLAUSE_MAX 50
 
 
 //type de cellule:
@@ -8,27 +9,20 @@
 // N pour noire sans valeur
 // A pour ampoule
 // B pour blanche
+// I pour illuminee
 
-// Formule pour un cellule C:
-// C = (A * -B * -N * -N0 * -N1 * -N2 * -N3 * -N4) 
-// + (-A * B * -N * -N0 * -N1 * -N2 * -N3 * -N4) 
-// + (-A * -B * N * -N0 * -N1 * -N2 * -N3 * -N4) 
-// + (-A * -B * -N * N0 * -N1 * -N2 * -N3 * -N4) 
-// + (-A * -B * -N * -N0 * N1 * -N2 * -N3 * -N4) 
-// + (-A * -B * -N * -N0 * -N1 * N2 * -N3 * -N4) 
-// + (-A * -B * -N * -N0 * -N1 * -N2 * N3 * -N4) 
-// + (-A * -B * -N * -N0 * -N1 * -N2 * -N3 * N4) 
+
 
 typedef enum 
 {
-    V=0,
+    B=0,
     N0=1,
     N1=2,
     N2=3,
     N3=4,
     N4=5,
     N=6,
-    B=7,
+    I=7,
     A=8 
 } Cell;
 
@@ -37,8 +31,21 @@ typedef enum
 typedef struct tableau_
 {
     int taille;
-    Cell tab[TAILLE][TAILLE];
+    Cell tab[TAILLE_MAX][TAILLE_MAX];
 } Tableau;
+
+typedef struct clause_ 
+{
+    int nb_var;
+    int var[TAILLE_CLAUSE_MAX];
+} Clause;
+
+typedef struct clauses_
+{
+    int nb_var;
+    int nb_clause;
+    Clause c[TAILLE_CLAUSE_MAX];
+} liste_clauses;
 
 Tableau tableau_vide(int taille);
 
