@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 {
     if (argc != 3)
     {
-        printf("Usage: main <nom_fichier_test> <nom_fichier_a_creer>\n"); //./main probleme_file ../MiniSat-C_v1.14.1/test.txt
+        printf("Usage: main <nom_fichier_test> <nom_fichier_a_creer>\n"); 
         exit(1);
     }
     
