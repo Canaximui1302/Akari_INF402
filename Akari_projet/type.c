@@ -3,6 +3,15 @@
 #include "solveur.h"
 #include "type.h"
 
+liste_clauses liste_vide()
+{
+    liste_clauses l;
+    l.nb_clause = 0;
+    l.nb_var = 0;
+    return l;
+
+}
+
 Tableau tableau_vide(int taille)
 {
     if(taille > TAILLE_MAX)
@@ -20,6 +29,26 @@ Tableau tableau_vide(int taille)
         }
     }
     return t;
+
+}
+
+Tableau_var tableau_var_vide(int taille)
+{
+    if(taille > TAILLE_MAX)
+    {
+        printf("Taille trop grande.\n");
+        return tableau_var_vide(0);
+    }
+    Tableau_var v;
+    v.taille = taille;
+    for(int i = 0; i < taille; i++)
+    {
+        for(int j = 0; j < taille; j++)
+        {
+            v.tab[i][j] = 0;
+        }
+    }
+    return v;
 
 }
 
@@ -55,6 +84,35 @@ void affichage_tableau(Tableau t)
     }
 }
 
+void affichage_tableau_var(Tableau_var v)
+{
+    for(int i = 0; i < v.taille; i++)
+    {
+        printf("--");
+    }
+    printf("-\n");
+    for(int i = 0; i < v.taille; i++)
+    {
+        for(int j = 0; j < v.taille; j++)
+        {
+            printf("|");
+            int c = v.tab[i][j];
+            if (c >= 10 || c < 0)
+                printf("%d", c);
+            else
+                printf(" %d", c);
+
+
+        }
+        printf("|\n");
+        for(int k = 0; k < v.taille; k++)
+        {
+            printf("---");
+        }
+        printf("-\n");
+    }
+}
+
 void set_valeur(Tableau *t, int cl, int ln, Cell c)
 {
     Cell c_precedente = t->tab[ln][cl];
@@ -68,6 +126,8 @@ void set_valeur(Tableau *t, int cl, int ln, Cell c)
             printf("Coup invalide.\n");
     }
 }
+
+
 
 Cell get_valeur(Tableau t, int cl, int ln)
 {

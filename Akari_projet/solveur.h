@@ -4,19 +4,21 @@
 
 void lire_input(char*nom_fichier_input, Tableau *t);
 
-void get_var(Tableau t, int *(v[TAILLE_MAX][TAILLE_MAX]), liste_clauses *l);
+void get_var(Tableau t, Tableau_var *v);
 
-void clause_N0(Tableau t, int x, int y, int v[TAILLE_MAX][TAILLE_MAX], liste_clauses *l, int *indice);
+void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
 
-void clause_N1(Tableau t, int x, int y, int v[TAILLE_MAX][TAILLE_MAX], liste_clauses *l, int *indice);
+void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
 
-void clause_N2(Tableau t, int x, int y, int v[TAILLE_MAX][TAILLE_MAX], liste_clauses *l, int *indice);
+void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
 
-void clause_N3(Tableau t, int x, int y, int v[TAILLE_MAX][TAILLE_MAX], liste_clauses *l, int *indice);
+void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
 
-void clause_N4(Tableau t, int x, int y, int v[TAILLE_MAX][TAILLE_MAX], liste_clauses *l, int *indice);
+void clause_N4(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
 
-void get_clause(Tableau t, int v[TAILLE_MAX][TAILLE_MAX], liste_clauses *l);
+void clause_N(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
+
+void get_clause(Tableau t, Tableau_var v, liste_clauses *l);
 
 void creer_dimacs(char *nom_fichier, liste_clauses l);
 

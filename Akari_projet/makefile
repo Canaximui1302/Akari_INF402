@@ -17,4 +17,4 @@ main: main.o solveur.o type.o
 	$(CC) main.o solveur.o type.o -o main 
 
 clean:
-	rm -f *.o 
+	rm -f main *.o 

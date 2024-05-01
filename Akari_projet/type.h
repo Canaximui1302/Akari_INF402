@@ -34,6 +34,12 @@ typedef struct tableau_
     Cell tab[TAILLE_MAX][TAILLE_MAX];
 } Tableau;
 
+typedef struct tableau_var_
+{
+    int taille;
+    int tab[TAILLE_MAX][TAILLE_MAX];
+} Tableau_var;
+
 typedef struct clause_ 
 {
     int nb_var;
@@ -47,9 +53,15 @@ typedef struct clauses_
     Clause c[TAILLE_CLAUSE_MAX];
 } liste_clauses;
 
+liste_clauses liste_vide();
+
 Tableau tableau_vide(int taille);
 
+Tableau_var tableau_var_vide(int taille);
+
 void affichage_tableau(Tableau t);
+
+void affichage_tableau_var(Tableau_var v);
 
 void set_valeur(Tableau *t, int ln, int cl, Cell c);
 
