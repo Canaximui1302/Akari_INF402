@@ -1,7 +1,7 @@
 #ifndef TYPE_H
 #define TYPE_H
-#define TAILLE_MAX 10
-#define TAILLE_CLAUSE_MAX 50
+#define TAILLE_MAX 100
+#define TAILLE_CLAUSE_MAX 500
 
 
 //type de cellule:
