@@ -2,9 +2,9 @@
 #define _SOLVEUR_H_
 #include "type.h"
 
-void lire_input(char*nom_fichier_input, Tableau *t);
+void lire_input(char *nom_fichier_input, Tableau *t);
 
-void get_var(Tableau t, Tableau_var *v);
+void get_var(Tableau t, Tableau_var *v, liste_clauses *l);
 
 void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *indice);
 

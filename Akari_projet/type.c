@@ -64,14 +64,14 @@ void affichage_tableau(Tableau t)
         for(int j = 0; j < t.taille; j++)
         {
             printf("|");
-            if(t.tab[i][j] == N) printf("n");
-            else if(t.tab[i][j] == N0 || 
-            t.tab[i][j] == N1 || 
-            t.tab[i][j] == N2 ||
-            t.tab[i][j] == N3 ||
-            t.tab[i][j] == N4) printf("%d", t.tab[i][j]-1);
-            else if(t.tab[i][j] == A) printf("*");
-            else if(t.tab[i][j] == B) printf(" ");
+            if(t.tab[j][i] == N) printf("n");
+            else if(t.tab[j][i] == N0 || 
+            t.tab[j][i] == N1 || 
+            t.tab[j][i] == N2 ||
+            t.tab[j][i] == N3 ||
+            t.tab[j][i] == N4) printf("%d", t.tab[j][i]-1);
+            else if(t.tab[j][i] == A) printf("*");
+            else if(t.tab[j][i] == B) printf(" ");
             else printf("?");
 
         }
@@ -88,7 +88,7 @@ void affichage_tableau_var(Tableau_var v)
 {
     for(int i = 0; i < v.taille; i++)
     {
-        printf("--");
+        printf("---");
     }
     printf("-\n");
     for(int i = 0; i < v.taille; i++)
@@ -96,7 +96,7 @@ void affichage_tableau_var(Tableau_var v)
         for(int j = 0; j < v.taille; j++)
         {
             printf("|");
-            int c = v.tab[i][j];
+            int c = v.tab[j][i];
             if (c >= 10 || c < 0)
                 printf("%d", c);
             else

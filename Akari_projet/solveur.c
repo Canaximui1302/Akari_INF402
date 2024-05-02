@@ -13,7 +13,7 @@
 // N 5 x y sont les cases noires sans contrainte de nombre d'ampoule.
 
 
-void lire_input(char*nom_fichier_input, Tableau *t)
+void lire_input(char *nom_fichier_input, Tableau *t)
 {
     FILE *f = fopen(nom_fichier_input, "r");
     int taille;
@@ -60,7 +60,7 @@ void lire_input(char*nom_fichier_input, Tableau *t)
 }
 
 
-void get_var(Tableau t, Tableau_var *v)
+void get_var(Tableau t, Tableau_var *v, liste_clauses *l)
 {
     int v0 = 1;
     v->taille = t.taille;
@@ -135,8 +135,7 @@ void get_var(Tableau t, Tableau_var *v)
             }
         }
     }
-
-
+    l->nb_var = v0 - 1;
 }
 
 
@@ -155,19 +154,15 @@ void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     int d = 0;
     if (x + 1 < v.taille){
         b = v.tab[y][x+1];
-        l->nb_var++;
         }
     if (x - 1 >= 0){
         d = v.tab[y][x-1];
-        l->nb_var++;
         }
     if (y + 1 < v.taille){
         c = v.tab[y+1][x];
-        l->nb_var++;
         }
     if (y - 1 < t.taille){
         a = v.tab[y-1][x];
-        l->nb_var++;
         }
 
     if (a != 0){
@@ -213,24 +208,22 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     int b = 0;
     int c = 0;
     int d = 0;
-    if (x + 1 < v.taille){
-        b = v.tab[y][x+1];
-        l->nb_var++;
-        }
-    if (x - 1 >= 0){
-        d = v.tab[y][x-1];
-        l->nb_var++;
-        }
-    if (y + 1 < v.taille){
-        c = v.tab[y+1][x];
-        l->nb_var++;
-        }
-    if (y - 1 < t.taille){
-        a = v.tab[y-1][x];
-        l->nb_var++;
-        }
-
-
+    if (x + 1 < v.taille)
+    {
+        b = v.tab[y][x + 1];
+    }
+    if (x - 1 >= 0)
+    {
+        d = v.tab[y][x - 1];
+    }
+    if (y + 1 < v.taille)
+    {
+        c = v.tab[y + 1][x];
+    }
+    if (y - 1 < t.taille)
+    {
+        a = v.tab[y - 1][x];
+    }
 
     Clause c1;
     int i = 0;
@@ -366,24 +359,23 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     int b = 0;
     int c = 0;
     int d = 0;
-    if (x + 1 < v.taille){
-        b = v.tab[y][x+1];
-        l->nb_var++;
-        }
-    if (x - 1 >= 0){
-        d = v.tab[y][x-1];
-        l->nb_var++;
-        }
-    if (y + 1 < v.taille){
-        c = v.tab[y+1][x];
-        l->nb_var++;
-        }
-    if (y - 1 < t.taille){
-        a = v.tab[y-1][x];
-        l->nb_var++;
-        }
+    if (x + 1 < v.taille)
+    {
+        b = v.tab[y][x + 1];
+    }
+    if (x - 1 >= 0)
+    {
+        d = v.tab[y][x - 1];
+    }
+    if (y + 1 < v.taille)
+    {
+        c = v.tab[y + 1][x];
+    }
+    if (y - 1 < t.taille)
+    {
+        a = v.tab[y - 1][x];
+    }
 
-    
     Clause c1;
     int i = 0;
     if (a != 0)
@@ -567,24 +559,22 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     int b = 0;
     int c = 0;
     int d = 0;
-    if (x + 1 < v.taille){
-        b = v.tab[y][x+1];
-        l->nb_var++;
-        }
-    if (x - 1 >= 0){
-        d = v.tab[y][x-1];
-        l->nb_var++;
-        }
-    if (y + 1 < v.taille){
-        c = v.tab[y+1][x];
-        l->nb_var++;
-        }
-    if (y - 1 < t.taille){
-        a = v.tab[y-1][x];
-        l->nb_var++;
-        }
-
-
+    if (x + 1 < v.taille)
+    {
+        b = v.tab[y][x + 1];
+    }
+    if (x - 1 >= 0)
+    {
+        d = v.tab[y][x - 1];
+    }
+    if (y + 1 < v.taille)
+    {
+        c = v.tab[y + 1][x];
+    }
+    if (y - 1 < t.taille)
+    {
+        a = v.tab[y - 1][x];
+    }
 
     Clause c1;
     int i = 0;
@@ -720,22 +710,22 @@ void clause_N4(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     int b = 0;
     int c = 0;
     int d = 0;
-    if (x + 1 < v.taille){
-        b = v.tab[y][x+1];
-        l->nb_var++;
-        }
-    if (x - 1 >= 0){
-        d = v.tab[y][x-1];
-        l->nb_var++;
-        }
-    if (y + 1 < v.taille){
-        c = v.tab[y+1][x];
-        l->nb_var++;
-        }
-    if (y - 1 < t.taille){
-        a = v.tab[y-1][x];
-        l->nb_var++;
-        }
+    if (x + 1 < v.taille)
+    {
+        b = v.tab[y][x + 1];
+    }
+    if (x - 1 >= 0)
+    {
+        d = v.tab[y][x - 1];
+    }
+    if (y + 1 < v.taille)
+    {
+        c = v.tab[y + 1][x];
+    }
+    if (y - 1 < t.taille)
+    {
+        a = v.tab[y - 1][x];
+    }
 
     if (a != 0){
     Clause c1;
@@ -781,22 +771,22 @@ void clause_N(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *ind
     int b = 0;
     int c = 0;
     int d = 0;
-    if (x + 1 < v.taille){
-        b = v.tab[y][x+1];
-        l->nb_var++;
-        }
-    if (x - 1 >= 0){
-        d = v.tab[y][x-1];
-        l->nb_var++;
-        }
-    if (y + 1 < v.taille){
-        c = v.tab[y+1][x];
-        l->nb_var++;
-        }
-    if (y - 1 < t.taille){
-        a = v.tab[y-1][x];
-        l->nb_var++;
-        }
+    if (x + 1 < v.taille)
+    {
+        b = v.tab[y][x + 1];
+    }
+    if (x - 1 >= 0)
+    {
+        d = v.tab[y][x - 1];
+    }
+    if (y + 1 < v.taille)
+    {
+        c = v.tab[y + 1][x];
+    }
+    if (y - 1 < t.taille)
+    {
+        a = v.tab[y - 1][x];
+    }
 
     Clause c1;
     int i = 0;

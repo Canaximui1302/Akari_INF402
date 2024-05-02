@@ -17,9 +17,10 @@ int main(int argc, char** argv)
     Tableau_var v = tableau_var_vide(TAILLE_MAX);
     
     lire_input(argv[1], &t);
-    //affichage_tableau(t);
-    get_var(t, &v);
+    get_var(t, &v, &l);
+    printf("Akari: \n");
     affichage_tableau(t);
+    printf("\nTableau des variables:\n");
     affichage_tableau_var(v);
     
     get_clause(t, v, &l);
