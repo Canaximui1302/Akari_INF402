@@ -623,15 +623,15 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     c1.var[i] = -a;
     i++;}
 
-    if (b!= 0) {
+    if (b > 0) {
     c1.var[i] = -b;
     i++;}
 
-    if (c!= 0) {
+    if (c > 0) {
     c1.var[i] = -c;
     i++;}
 
-    if (d!= 0) {
+    if (d > 0) {
     c1.var[i] = -d;
     i++;}
 
@@ -892,22 +892,22 @@ void get_clause(Tableau t, Tableau_var v, liste_clauses *l)
             switch(c)
             {
                 case N0:
-                    clause_N0(t, i, j, v, l, &indice);
+                    clause_N0(t, j, i, v, l, &indice);
                     break;
                 case N1:
-                    clause_N1(t, i, j, v, l, &indice);
+                    clause_N1(t, j, i, v, l, &indice);
                     break;
                 case N2:
-                    clause_N2(t, i, j, v, l, &indice);
+                    clause_N2(t, j, i, v, l, &indice);
                     break;
                 case N3:
-                    clause_N3(t, i, j, v, l, &indice);
+                    clause_N3(t, j, i, v, l, &indice);
                     break;
                 case N4:
-                    clause_N4(t, i, j, v, l, &indice);
+                    clause_N4(t, j, i, v, l, &indice);
                     break;
                 case N:
-                    clause_N(t, i, j, v, l, &indice);
+                    clause_N(t, j, i, v, l, &indice);
                     break;
                 default:
                     break;
