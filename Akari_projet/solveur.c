@@ -165,7 +165,7 @@ void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
         a = v.tab[y-1][x];
         }
 
-    if (a != 0 && a != -1){
+    if (a > 0){
     Clause c1;
     c1.nb_var = 1;
     c1.var[0] = -a;
@@ -174,7 +174,7 @@ void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     *indice = *indice + 1;
     }
 
-    if (b != 0 && b != -1) {
+    if (b > 0) {
     Clause c2;
     c2.nb_var = 1;
     c2.var[0] = -b;
@@ -183,7 +183,7 @@ void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     *indice = *indice + 1;
     }
 
-    if (c != 0 && c != -1){ 
+    if (c > 0){ 
     Clause c3;
     c3.nb_var = 1;
     c3.var[0] = -c;
@@ -192,7 +192,7 @@ void clause_N0(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     *indice = *indice + 1;
     }
 
-    if (d != 0 && d != -1){
+    if (d > 0){
     Clause c4;
     c4.nb_var = 1;
     c4.var[0] = -d;
@@ -228,7 +228,7 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     Clause c1;
     int i = 0;
 
-    if (a != 0 && a != -1){
+    if (a > 0){
     c1.var[i] = a;
     i++;}
 
@@ -251,12 +251,12 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c2;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c2.var[i] = -a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c2.var[i] = -b;
         i++;
@@ -270,12 +270,12 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c3;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c3.var[i] = -a;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c3.var[i] = -c;
         i++;
@@ -290,12 +290,12 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c4;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c4.var[i] = -a;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c4.var[i] = -d;
         i++;
@@ -310,12 +310,12 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c5;
     i = 0;
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c5.var[i] = -b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c5.var[i] = -c;
         i++;
@@ -330,12 +330,12 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c6;
     i = 0;
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c6.var[i] = -b;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c6.var[i] = -d;
         i++;
@@ -350,12 +350,12 @@ void clause_N1(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c7;
     i = 0;
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c7.var[i] = -c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c7.var[i] = -d;
         i++;
@@ -394,17 +394,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c1;
     int i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c1.var[i] = -a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c1.var[i] = -b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c1.var[i] = -c;
         i++;
@@ -419,17 +419,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c2;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c2.var[i] = -a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c2.var[i] = -b;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c2.var[i] = -d;
         i++;
@@ -444,17 +444,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c3;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c3.var[i] = -a;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c3.var[i] = -c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c3.var[i] = -d;
         i++;
@@ -469,17 +469,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c4;
     i = 0;
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c4.var[i] = -b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c4.var[i] = -c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c4.var[i] = -d;
         i++;
@@ -494,17 +494,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c5;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c5.var[i] = a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c5.var[i] = b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c5.var[i] = c;
         i++;
@@ -519,17 +519,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c6;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c6.var[i] = a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c6.var[i] = b;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c6.var[i] = d;
         i++;
@@ -544,17 +544,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c7;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c7.var[i] = a;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c7.var[i] = c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c7.var[i] = d;
         i++;
@@ -569,17 +569,17 @@ void clause_N2(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c8;
     i = 0;
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c8.var[i] = b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c8.var[i] = c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c8.var[i] = d;
         i++;
@@ -619,7 +619,7 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     Clause c1;
     int i = 0;
 
-    if (a != 0 && a != -1){
+    if (a > 0){
     c1.var[i] = -a;
     i++;}
 
@@ -645,12 +645,12 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c2;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c2.var[i] = a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c2.var[i] = b;
         i++;
@@ -665,12 +665,12 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c3;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c3.var[i] = a;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c3.var[i] = c;
         i++;
@@ -685,12 +685,12 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c4;
     i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c4.var[i] = a;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c4.var[i] = d;
         i++;
@@ -705,12 +705,12 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c5;
     i = 0;
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c5.var[i] = b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c5.var[i] = c;
         i++;
@@ -725,12 +725,12 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c6;
     i = 0;
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c6.var[i] = b;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c6.var[i] = d;
         i++;
@@ -745,12 +745,12 @@ void clause_N3(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
 
     Clause c7;
     i = 0;
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c7.var[i] = c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c7.var[i] = d;
         i++;
@@ -787,7 +787,7 @@ void clause_N4(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
         a = v.tab[y - 1][x];
     }
 
-    if (a != 0 && a != -1){
+    if (a > 0){
     Clause c1;
     c1.nb_var = 1;
     c1.var[0] = a;
@@ -796,7 +796,7 @@ void clause_N4(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     *indice = *indice + 1;
     }
 
-    if (b != 0 && b != -1) {
+    if (b > 0) {
     Clause c2;
     c2.nb_var = 1;
     c2.var[0] = b;
@@ -805,7 +805,7 @@ void clause_N4(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     *indice = *indice + 1;
     }
 
-    if (c != 0 && c != -1){ 
+    if (c > 0){ 
     Clause c3;
     c3.nb_var = 1;
     c3.var[0] = c;
@@ -814,7 +814,7 @@ void clause_N4(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *in
     *indice = *indice + 1;
     }
 
-    if (d != 0 && d != -1){
+    if (d > 0){
     Clause c4;
     c4.nb_var = 1;
     c4.var[0] = d;
@@ -850,22 +850,22 @@ void clause_N(Tableau t, int x, int y, Tableau_var v, liste_clauses *l, int *ind
 
     Clause c1;
     int i = 0;
-    if (a != 0 && a != -1)
+    if (a > 0)
     {
         c1.var[i] = a;
         i++;
     }
-    if (b != 0 && b != -1)
+    if (b > 0)
     {
         c1.var[i] = b;
         i++;
     }
-    if (c != 0 && c != -1)
+    if (c > 0)
     {
         c1.var[i] = c;
         i++;
     }
-    if (d != 0 && d != -1)
+    if (d > 0)
     {
         c1.var[i] = d;
         i++;
